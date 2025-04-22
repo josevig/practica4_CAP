@@ -160,7 +160,7 @@ int main(int argc, char **argv) {
 
         //Operación 3: E = D + C
         t_start=omp_get_wtime();
-        sum_matrix(local_D,local_C,local_E,rows_per_proc,dim)
+        sum_matrix(local_D,local_C,local_E,rows_per_proc,dim);
         t_end=omp_get_wtime();
         time_sum= t_end - t_start;
     }
