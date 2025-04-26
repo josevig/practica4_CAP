@@ -89,7 +89,8 @@ int main(int argc, char **argv) {
 
     dim = atoi(argv[1]);
     n_threads = atoi(argv[2]);
-    MPI_Init(&argc, &argv);
+    int provided, required = MPI_THREAD_FUNNELED;
+    MPI_Init_thread(&argc, &argv, required, &provided);
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
     MPI_Comm_size(MPI_COMM_WORLD, &size);
     /* Difunde la dimensión a todos los procesos */
